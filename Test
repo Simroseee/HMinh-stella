@@ -1,0 +1,38 @@
+-- Tạo một Tab mới tên là "Chức Năng"
+local TabCombat = win:AddTab("Chien Dau", 4483362458)
+
+-- Biến kiểm soát trạng thái bật/tắt
+_G.BringMobs = false
+
+TabCombat:AddToggle("Gom Quai (Bring Mobs)", false, function(state)
+    _G.BringMobs = state
+    
+    -- Chạy vòng lặp khi bật Toggle
+    task.spawn(function()
+        while _G.BringMobs do
+            pcall(function()
+                -- Lấy vị trí hiện tại của bạn (cách 5 block về phía trước để quái không đè lên người)
+                local myPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -5)
+                
+                -- Tìm tất cả quái vật trong Workspace (Lưu ý: Bạn cần thay "Enemies" bằng tên Folder chứa quái của Game đó)
+                -- Thông thường là workspace.Enemies hoặc workspace.NPCs
+                local folderQuai = workspace:FindFirstChild("Enemies") or workspace:FindFirstChild("NPCs") or workspace
+                
+                for _, mob in pairs(folderQuai:GetChildren()) do
+                    -- Kiểm tra xem có phải là quái vật sống không
+                    if mob:FindFirstChild("Humanoid") and mob.Humanoid.Health > 0 and mob:FindFirstChild("HumanoidRootPart") then
+                        -- Tính khoảng cách, nếu quái ở gần (ví dụ dưới 300 block) thì mới gom
+                        local distance = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - mob.HumanoidRootPart.Position).Magnitude
+                        if distance < 300 then
+                            -- Đưa quái về vị trí trước mặt bạn
+                            mob.HumanoidRootPart.CFrame = myPos
+                            -- Tắt CanCollide để quái không đẩy bạn ra xa
+                            mob.HumanoidRootPart.CanCollide = false
+                        end
+                    end
+                end
+            end)
+            task.wait(0.1) -- Đợi một chút để tránh lag máy
+        end
+    end)
+end)
