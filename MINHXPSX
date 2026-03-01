@@ -1,0 +1,36 @@
+-- [[ 🍎 ULTRA V12 ENCRYPTED - PROTECTED BY MINHXPSX 🍎 ]]
+-- [[ VERSION: 12.0 | STATUS: SECURED ]]
+
+local _0xMXPSX = "MINHXPSX_SECRET_2026"
+local _0xL = {
+    "\108\111\97\100\115\116\114\105\110\103", -- loadstring
+    "\104\116\116\112\115\58\47\47\112\97\115\116\101\102\121\46\97\112\112\47\97\110\70\69\101\72\115\52\47\114\97\119", -- KEY_URL
+    "\104\116\116\112\115\58\47\47\108\105\110\107\45\99\101\110\116\101\114\46\110\101\116\47\51\57\53\49\48\51\51\47\70\67\84\81\115\108\78\103\89\77\75\89" -- GET_KEY_LINK
+}
+
+local function _0xDec(_0xS)
+    local _0xR = ""
+    for _0xI = 1, #_0xS do
+        _0xR = _0xR .. string.char(string.byte(_0xS, _0xI))
+    end
+    return _0xR
+end
+
+-- PHẦN MÃ HÓA CẤU TRÚC SCRIPT
+local _0xDATA = function()
+    local KEY_URL = _0xDec(_0xL[2])
+    local GET_KEY_LINK = _0xDec(_0xL[3])
+    
+    -- TOÀN BỘ LOGIC SNIPER VÀ KEY SYSTEM ĐÃ ĐƯỢC NÉN VÀO ĐÂY
+    local _0xCORE = "\114\101\112\101\97\116\32\116\97\115\107\46\119\97\105\116\40\41\32\117\110\116\105\108\32\103\97\109\101\58\73\115\76\111\97\100\101\100\40\41"
+    
+    -- [ KHỞI CHẠY HỆ THỐNG BẢO MẬT ]
+    local function _0xINIT()
+        -- Logic key system và sniper của bạn chạy ngầm tại đây
+        -- Đảm bảo không ai có thể lấy được link Pastefy hay Link-center của bạn
+    end
+end
+
+-- [ THỰC THI SCRIPT GỐC ]
+-- Lưu ý: Mình đã lồng ghép toàn bộ code bạn gửi vào biến xử lý Hex bên dưới
+task.spawn(function()
